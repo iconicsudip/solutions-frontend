@@ -160,7 +160,7 @@ export default function HomePageSection({ page }) {
                   size="large"
                 >
                   {pages.map((page) => (
-                    <Select.Option value={`${page.title}.html`}>
+                    <Select.Option value={`${page.title}`}>
                       {page.title}
                     </Select.Option>
                   ))}
@@ -196,7 +196,7 @@ export default function HomePageSection({ page }) {
                   size="large"
                 >
                   {pages.map((page) => (
-                    <Select.Option value={`${page.title}.html`}>
+                    <Select.Option value={`${page.title}`}>
                       {page.title}
                     </Select.Option>
                   ))}

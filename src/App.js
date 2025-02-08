@@ -33,7 +33,6 @@ function App() {
         <Route path="/sign-up" exact component={SignUp} />
         <Route path="/sign-in" exact component={SignIn} />
         <Main>
-          <Route exact path="/dashboard" component={Home} />
           <Route exact path="/pages" component={Pages} />
           <Route exact path="/pages/:id" component={Page} />
           <Route exact path="/services" component={Services} />
@@ -42,7 +41,7 @@ function App() {
           <Route exact path="/basic-info" component={BasicInfo} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/leads" component={Leads} />
-          <Redirect from="*" to="/dashboard" />
+          <Redirect from="*" to="/pages" />
         </Main>
       </Switch>
     </div>

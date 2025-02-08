@@ -123,7 +123,7 @@ export default function Service() {
                   size="large"
                 >
                   {pages.map((page) => (
-                    <Select.Option value={`${page.title}.html`}>
+                    <Select.Option value={`${page.title}`}>
                       {page.title}
                     </Select.Option>
                   ))}

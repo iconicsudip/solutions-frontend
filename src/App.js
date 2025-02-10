@@ -25,6 +25,7 @@ import BasicInfo from "./pages/BasicInfo";
 import Service from "./pages/Service";
 import Testimonials from "./pages/Testimonials";
 import Leads from "./pages/Leads";
+import HeaderManagement from "./pages/HeaderManagement";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/basic-info" component={BasicInfo} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/leads" component={Leads} />
+          <Route exact path="/header" component={HeaderManagement} />
           <Redirect from="*" to="/pages" />
         </Main>
       </Switch>

@@ -1,5 +1,5 @@
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
-import { Button, Card, Form, Input } from "antd";
+import { Button, Card, Form, Input, Switch } from "antd";
 import React, { useEffect } from "react";
 import { getBasicInfo, upsertBasicInfo } from "../api/basicinfo.api";
 
@@ -17,6 +17,9 @@ export default function BasicInfo() {
   useEffect(() => {
     handleGetBasicInfo();
   }, []);
+  const onBannerTextChange = (checked) => {
+    console.log(`switch to ${checked}`);
+  };
   return (
     <Card
       className="header-solid h-full"
@@ -42,6 +45,13 @@ export default function BasicInfo() {
         onFinish={onFinish}
         layout="vertical"
       >
+        <Form.Item
+          name="isBannerShow"
+          label="Show banner or not"
+          valuePropName="checked"
+        >
+          <Switch onChange={onBannerTextChange} />
+        </Form.Item>
         <Form.List name="bannerText">
           {(fields, { add, remove }, { errors }) => (
             <>
@@ -73,6 +83,9 @@ export default function BasicInfo() {
             </>
           )}
         </Form.List>
+        <Form.Item name="companyName" label={"Company name"}>
+          <Input type="text" placeholder="Please enter company name" />
+        </Form.Item>
         <Form.Item name="companyEmail" label={"Company email"}>
           <Input type="email" placeholder="Please enter company email" />
         </Form.Item>
@@ -83,6 +96,15 @@ export default function BasicInfo() {
           <Input
             maxLength={10}
             placeholder="Please enter company phone number"
+          />
+        </Form.Item>
+        <Form.Item
+          name="companyLocationIframe"
+          label={"Company Location Iframe ( Extract from Google Map )"}
+        >
+          <Input
+            type="text"
+            placeholder="Please enter company location iframe"
           />
         </Form.Item>
       </Form>

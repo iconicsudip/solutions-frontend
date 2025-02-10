@@ -107,6 +107,17 @@ export default function BasicInfo() {
             placeholder="Please enter company location iframe"
           />
         </Form.Item>
+        <Form.Item
+          name="websiteThemeColor"
+          label={"Website Theme Primary Color (Hex Code without '#')"}
+        >
+          <Input
+            type="text"
+            minLength={6}
+            maxLength={6}
+            placeholder="Please enter website primary color hex code"
+          />
+        </Form.Item>
       </Form>
     </Card>
   );
